@@ -1,1 +1,1 @@
-Pagination-Content-Filter-
+pagination-filter-v2
