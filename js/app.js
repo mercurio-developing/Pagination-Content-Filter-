@@ -11,6 +11,11 @@ var b;
 var c;
 var student;
 var search;
+var k;
+var j;
+
+$("h2").append('<input type="text" name="search"  class="search">');
+$("h2").append('<button type="button" name="button" class="button">Search</button>');
 
 // i create the functions!
 
@@ -22,8 +27,8 @@ function pagination (){
 //pagination in the first page when loading
 
     a = 0;
-    b = (numberForPage * 1) - 1;
-
+    b = (numberForPage * 1);
+    $("h2").append('<text class="shower">Students ' + 1 + ' - ' + b + ' out of ' + numberOfStudents.length + '</text>');
     for (i = a; i < b;i += 1){
 
               $(".student-item").eq(i).show();
@@ -39,24 +44,39 @@ function pagination (){
 //an equation for adding users and making the correct location with reference to the number of pages;
 
   $( ".pagination ul li a" ).click(function( event ) {
-
+        $('h10').remove();
         $(".student-item").hide();
 
         c = parseInt( event.target.className);
 
-        var a = ( c - 1 ) * numberForPage;
-        var b = (numberForPage * c) - 1;
+         a = ( c - 1 ) * numberForPage;
+         b = (numberForPage * c);
 
        for (i = a; i < b;i += 1){
 
                  $(".student-item").eq(i).show();
-
+                 $('text').remove();
        }
-    });
 
+       shower();
+    });
 });
 
 };
+
+//shower
+
+function shower (){
+       j = ( c - 1 ) * numberForPage + 1;
+       k = (numberForPage * c);
+        $("h2").append('<text class="shower">Students ' + j + ' - ' + k + ' out of ' + numberOfStudents.length + '</text>');
+
+      $('.pagination li:last-child').click(function(){
+        $('text').remove();
+        k =  numberOfStudents.length
+        $("h2").append('<text class="shower">Students ' + j + ' - ' + k + ' out of ' + numberOfStudents.length + '</text>');
+      })
+}
 
 // function for searching students!!
 
@@ -67,10 +87,10 @@ function searchStundent() {
     $('button').dblclick(function() {
 
       $(".student-item").hide();
-
+      $('h10').remove();
 
       a = 0;
-      b = (numberForPage * 1) - 1;
+      b = (numberForPage * 1) ;
 
       for (i = a; i < b;i += 1){
 
@@ -94,7 +114,7 @@ function searchStundent() {
         // when the word in search is not in the content of the list i put the message in the screen!
         if ($("h3:contains('" +search+ "')").eq(0).text() === ""){
             $('h10').remove();  //remove the historial of messages
-            $(".student-list").append('<h10>No encontramos nada...</h10>');
+            $(".student-list").append('<h10>Not found...</h10>');
 
 
         }

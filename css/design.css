@@ -118,19 +118,32 @@ body{
       color: #fff;
     }
 
-  .search {
+    .pagination ul  li a{
+      text-decoration: none;
+    }
 
+  .search {
+    margin-left: 10px;
+    font-size: 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 7px 7px;
       margin-left: 500px;
+  }
+  input::selection {
+    background-color: #4ba6c3;
 
   }
 
   .button {
-    margin-left: 10px;
-    font-size: 15px;
+    margin-left: 15px;
+    font-size: 14px;
     border: 1px solid #eaeaea;
     border-radius: 5px;
-    padding: 3px 8px;
-    color: #4ba6c3;
+    padding: 10px 15px;
+    color: #fff;
+    background-color:#4ba6c3;
+    font-weight: bold;
   }
   button:hover {
     background-color: #4ba6c3;
@@ -143,4 +156,11 @@ body{
     color: lightgrey;
     margin-left: 20px;
     margin-top: 200px;
+  }
+
+  .shower {
+      font-size: 15px;
+      margin-left: 150px;
+      font-style:italic;
+      color: lightgrey;
   }
